@@ -1,21 +1,19 @@
-const mongoose = require('mongoose')
-const { Schema } = mongoose
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
 const bookSchema = new Schema({
   name: {
     type: String,
-    require: true
-  }, 
+    required: true  // исправлено с require на required
+  },
   author: String,
   price: {
     type: Number,
-    require: true
+    required: true  // исправлено с require на required
   },
   description: String
 }, {
-    timestamps: true
-})
+  timestamps: true  // добавление временных меток
+});
 
-module.exports = mongoose.model('Book', bookSchema)
-
-
+module.exports = mongoose.model('Book', bookSchema);
